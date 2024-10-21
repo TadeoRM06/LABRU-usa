@@ -88,7 +88,7 @@
                     <!-- Image -->
                     <div class="md:w-5/12 lg:w-1/2 flex justify-center items-center " data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="relative h-full py-32">
+                        <div class="relative h-full left-1 md:left-0">
                             <img src="/images/beers/ipa/chela.png" class="h-[75vh] max-h-[700px] object-contain" />
                         </div>
                     </div>
