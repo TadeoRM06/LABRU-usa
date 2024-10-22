@@ -34,7 +34,7 @@
             </label>
           </div>
           <p v-if="errors.checkbox" class="text-red-500 text-sm mb-2">{{ errors.checkbox }}</p>
-          <p class="text-center text-primary mb-4">contact@labru.com</p>
+          <a href="mailto:contact@labru.com" class="text-center text-primary mb-4 block">contact@labru.com</a>
           <div class="flex justify-center">
             <button
               type="submit"
