@@ -1,6 +1,7 @@
 <template>
 <section class="relative mx-auto">
-    <div class="absolute inset-0 -z-10 -mx-6 sm:-mx-12 lg:-mx-16 xl:-mx-28 rounded-t-[3rem] pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 -z-10 -mx-6 sm:-mx-12 
+    lg:-mx-16 xl:-mx-28 rounded-t-[3rem] pointer-events-none overflow-hidden">
         <div class="absolute left-1/2 -translate-x-1/2 top-0 -z-10">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1404"
                 height="658">
@@ -32,7 +33,7 @@
             </svg>
             </div>
         </div>
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 z-10">
+        <div class="relative max-w-6xl mx-auto z-10">
             <div class="">
                 <div
                     class=" max-w-xl mx-auto md:max-w-none flex flex-col md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-8 space-y-reverse md:space-y-0">
@@ -43,7 +44,7 @@
                             class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
                             IPA
                         </h3>
-                        <p class="text-lg text-slate-400 mb-8 mx-10 text-left ">CCrafted with passion and precision, our IPA is a bold, hop-forward brew that commands attention. This is a brew that delivers a perfect punch of bitterness and a crisp, refreshing finish. It’s more than IPA -it’s the spirit of a Mexican craft, brewed for those who crave intensity and originality in every sip.
+                        <p class="text-lg text-slate-400 mb-8 mx-10  text-left ">Crafted with passion and precision, our IPA is a bold, hop-forward brew that commands attention. This is a brew that delivers a perfect punch of bitterness and a crisp, refreshing finish. It’s more than IPA -it’s the spirit of a Mexican craft, brewed for those who crave intensity and originality in every sip.
  
  In tribute to Vizcaino, a bio-natural park in Baja California Sur, Mexico, declared a World Heritage site by UNESCO in 1993.
  
@@ -84,10 +85,11 @@
 
                     <!-- Image -->
                     <!-- Imagen -->
-<div class="md:mt-0 md:w-5/12 lg:w-1/2 flex justify-center items-center" data-aos="fade-up" data-aos-delay="100">
-    <div class="md:mt-0 relative h-full left-1 md:left-0">
+                    <div class="md:mt-0 w-full md:w-5/12 lg:w-1/2 flex justify-center items-center mx-0" data-aos="fade-up" data-aos-delay="100">
+    <div class="md:mt-0 relative h-full left-0 md:left-0 mx-0">
         <img src="/images/beers/ipa/vizcaBG3.png" 
-            class="h-[75vh] md:h-[95vh] max-h-[900px] object-contain relative z-0" />
+            class="w-full h-auto md:h-[100vh] max-h-[1000px] object-contain relative z-0 mx-0
+            mt-40 md:mt-0" />
     </div>
 </div>
 
