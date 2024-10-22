@@ -1,8 +1,9 @@
 <template>
-<Welcome/>
-<About/>
-<CreamAle/>
-<IPA/>
-<Lager/>
-<History/>
+    <Welcome />
+    <About />
+    <CreamAle />
+    <IPA />
+    <Lager />
+    <History />
+    <New/>
 </template>
