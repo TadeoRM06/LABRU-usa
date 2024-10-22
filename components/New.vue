@@ -110,7 +110,7 @@
     animation: pulse 1s infinite;
   }
   .bg-custom-size {
-    background-size: 45%; /* Ajusta el tamaño como prefieras */
+    background-size: 70vh; /* Ajusta el tamaño como prefieras */
   }
   
   @keyframes pulse {

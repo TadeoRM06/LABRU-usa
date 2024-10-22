@@ -3,7 +3,7 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 shadow-2xl">
       <!-- Logo -->
       <NuxtLink href="/" class="flex items-center">
-        <img src="/images/LOGO LETRAS-.png" class="h-16" alt="LA BRU Logo" />
+        <img src="/images/LOGO LETRAS-.png" class="h-16 lg:h-14" alt="LA BRU Logo" />
       </NuxtLink>
 
       <!-- Menu Button for Mobile -->
@@ -19,7 +19,7 @@
 
       <!-- Menu Items and Social Icons for Desktop -->
       <div class="hidden md:flex md:items-center">
-        <ul class="flex space-x-8">
+        <ul class="flex space-x-8 md:space-x-6">
           <li>
             <a href="#about" class="text-white hover:text-primary">Who We Are</a>
           </li>

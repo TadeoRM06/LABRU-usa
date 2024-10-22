@@ -1,11 +1,11 @@
 <template>
-  <div class="relative h-screen bg-cover bg-center mt-24" style="background-image: url('/images/welcome/image.png');">
+  <div class="relative h-[90vh] bg-cover bg-center mt-24" style="background-image: url('/images/welcome/image.png');">
     <!-- Capa de difuminado negro que empieza en 3/4 de la imagen -->
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/95" style="background: linear-gradient(to bottom, transparent 75%, rgba(0, 0, 0, 0.95) 100%);"></div>
     
-    <!-- Texto centrado con efecto vidrio -->
-    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 mt-12" data-aos="fade-up"> <!-- Cambia el mt-12 según necesites -->
-      <h1 class="text-xl font-bold text-white bg-black bg-opacity-40 backdrop-blur-md border border-white/10 rounded-xl p-6 md:p-10 text-center">
+    <!-- Texto centrado con efecto vidrio, movido hacia arriba -->
+    <div class="absolute inset-0 flex flex-col items-center justify-start px-4 mt-4" data-aos="fade-up">
+      <h1 class="h3 W text-white bg-black bg-opacity-5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-10 text-center">
         REMEMBER EL SABOR DE MÉXICO WITH 
         <span class="text-primary"><br/>LA BRU</span>
       </h1>
