@@ -1,5 +1,5 @@
 <template>
-  <nav class="border-primary-light bg-gray-950 md:bg-black fixed w-full top-0 left-0 shadow-md z-50">
+  <nav class="border-primary-light bg-gray-950 md:bg-black fixed w-full top-0 left-0 shadow-md z-50 max-w-screen-2xl ">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 shadow-2xl">
       <!-- Logo -->
       <NuxtLink href="/" class="flex items-center">
@@ -41,35 +41,19 @@
         </ul>
         <!-- Social Icons for Desktop -->
         <div class="flex items-center ml-8 space-x-4">
-          <NuxtLink href="#" class="text-white hover:text-primary flex items-center justify-center w-10 h-10">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
-              <g fill="#ff8000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                style="mix-blend-mode: normal">
-                <g transform="scale(8,8)">
-                  <path
-                    d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z">
-                  </path>
-                </g>
-              </g>
-            </svg>
-          </NuxtLink>
-          <NuxtLink href="#" class="text-white hover:text-primary flex items-center justify-center w-7 h-7">
-            <svg fill="#ff8000" height="100%" width="100%" version="1.1" id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310"
-              xml:space="preserve">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <g id="XMLID_834_">
-                  <path id="XMLID_835_"
-                    d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064 c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996 V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545 C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703 c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z">
-                  </path>
-                </g>
-              </g>
-            </svg>
-          </NuxtLink>
+          <NuxtLink
+              v-for="(social, index) in socialLinks"
+              :key="index"
+              :href="social.url"
+              class="hover:opacity-80 transition-opacity duration-300"
+            >
+              <NuxtImg 
+                :src="social.icon"
+                :width="social.width"
+                :height="social.height"
+                alt="Social media icon"
+              />
+            </NuxtLink>
         </div>
       </div>
 
@@ -96,35 +80,19 @@
           </li>
         </ul>
         <div class="flex items-center justify-center mt-4 space-x-4">
-          <NuxtLink href="#" class="text-white hover:text-primary flex items-center justify-center w-10 h-10">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
-              <g fill="#ff8000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                style="mix-blend-mode: normal">
-                <g transform="scale(8,8)">
-                  <path
-                    d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z">
-                  </path>
-                </g>
-              </g>
-            </svg>
-          </NuxtLink>
-          <NuxtLink href="#" class="text-white hover:text-primary flex items-center justify-center w-7 h-7">
-            <svg fill="#ff8000" height="100%" width="100%" version="1.1" id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310"
-              xml:space="preserve">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <g id="XMLID_834_">
-                  <path id="XMLID_835_"
-                    d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064 c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996 V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545 C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703 c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z">
-                  </path>
-                </g>
-              </g>
-            </svg>
-          </NuxtLink>
+          <NuxtLink
+              v-for="(social, index) in socialLinks"
+              :key="index"
+              :href="social.url"
+              class="hover:opacity-80 transition-opacity duration-300"
+            >
+              <NuxtImg 
+                :src="social.icon"
+                :width="social.width"
+                :height="social.height"
+                alt="Social media icon"
+              />
+            </NuxtLink>
         </div>
       </div>
     </div>
@@ -136,6 +104,10 @@
 import { ref } from 'vue';
 
 const isMenuOpen = ref(false);
+const socialLinks = [
+  { icon: '/icons/instagram.svg', url: '#', width: 40, height: 40 },
+  { icon: '/icons/facebook.svg', url: '#', width: 30, height: 30 }
+]; 
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
