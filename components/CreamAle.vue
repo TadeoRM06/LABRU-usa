@@ -37,7 +37,7 @@
                 <div
                     class="max-w-xl  mx-auto md:max-w-none flex flex-col md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-8 space-y-reverse md:space-y-0">
                     <!-- Image -->
-                    <div class="md:w-5/12 lg:w-1/2 flex justify-center items-center" data-aos="fade-up"
+                    <div class="md:mt-10 md:w-5/12 lg:w-1/2 flex justify-center items-center" data-aos="fade-up"
                         data-aos-delay="100">
                         <div class="relative">
                             <img src="/images/beers/creamale/creamale.png" class="h-[75vh] max-h-[700px] object-contain" />
@@ -50,9 +50,14 @@
                             class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
                             CREAM ALE
                         </h3>
-                        <p class="text-lg text-slate-400 mb-8 px-4">Con authentic Mexican Maíz Azul from meseta Purépecha
-                            brings smooth y refreshing textures con un rich, earthy sweetness del corn, delivering a
-                            flavor as vibrant as la tierra that comes from.</p>
+                        <p class="text-lg text-slate-400 mb-8 md:pr-4 mx-10 text-left">
+                            Our cream ale brewed with Authentic Maíz Azule AKA Blue 
+                            Corn from meseta Purepecha brings smooth and refreshing 
+                            textures with the rich, earthy sweetness of corn, delivering
+                             a flavor as vibrant as the land it comes from. A truly unique 
+                             and unforgettable taste of our country. A tribute to Maíz Azul,
+                              a symbol of Mexico’s rich agricultural heritage, cultivated by
+                               indigenous communities for centuries.</p>
                         <div class="mt-8 w-72 md:max-w-xs max-md:mx-auto space-y-2  ">
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
@@ -76,7 +81,7 @@
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
                                 :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
                                 @click.prevent="tab = '4'">
-                                <span>Caloriaas: 5.4%</span>
+                                <span>Calorie: 5.4%</span>
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
@@ -92,18 +97,15 @@
             <div
                 class="flex flex-col md:flex-row justify-center items-center
                  space-x-0 md:space-x-8 pb-12 md:pb-20">
-                <div class="w-full md:w-2/3  text-center md:text-left mr-4 py-6">
-                    <p class="text-lg text-slate-400 px-5">
-                        In the heart of la Meseta Purepecha, donde los whispers de nuestros ancestros echo through our
-                        campos, there lies a treasure of our heritage: Maíz Azul. For mas de 7,000 years, this vibrant
-                        Maíz Azul has been nurtured con wisdom and tender care, passed down de generación a generación.
-                        Every kernel pulses con una historia of love, tradición, and deep respect for our beautiful
-                        Mexico. Discover nuestra magia.
+                 <div class="w-full md:w-2/3  text-center md:text-left mr-4 py-6">
+                    <p class="text-lg text-slate-400 mx-10 text-left">
+                        In the heart of the Meseta Purepecha, where the whispers of our ancestors echo through the fields, lies a treasure of our heritage: Maíz Azul AKA Blue Corn. For over 7,000 years, this vibrant blue corn has been nurtured with wisdom and tender care, passed down through generations of dedicated farmers. Every kernel pulses with a story of love, tradition, and deep respect for our beautiful Mexico. Discover our magic
+
                     </p>
                 </div>
                 <div class="flex justify-center items-start w-full md:w-1/3 mt-4 md:mt-0">
                     <!-- Cambié w-1/3 a w-full para pantallas pequeñas -->
-                    <img src="/images/beers/creamale/image.png" alt="Beer" class="h-56 object-contain" />
+                    <img src="/images/beers/creamale/image.png" alt="Beer" class="h-60 object-contain" />
                 </div>
             </div>
 

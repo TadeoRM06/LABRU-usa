@@ -1,15 +1,17 @@
 <template>
   <div class="max-w-6xl mx-auto flex flex-col items-center min-h-screen bg-cover bg-center py-12 px-4 sm:px-6 lg:px-8"
        style="background-image: url('/path-to-your-image.jpg');">
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-4" data-aos="fade-up">WHO SOMOS</h2>
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-4" data-aos="fade-up">ABOUT US</h2>
     <p class="text-white text-center text-sm sm:text-base lg:text-lg max-w-2xl" data-aos="fade-up" data-aos-delay="200">
       Redescubre la nostalgia de México con LA BRU en cada chela, straight from Michoacán.
     </p>
 
     <!-- Imagen centrada -->
+    <div class="flex justify-center">
     <img src="/images/image.png" alt="Descripción de la imagen" 
          class="w-4/5 sm:w-3/5 md:w-1/2 lg:w-1/3 xl:w-1/4 h-auto my-8 sm:my-12" 
          data-aos="zoom-in" data-aos-delay="400"/>
+</div>
 
     <!-- Contenedor para los 3 divs -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up" data-aos-delay="300">
