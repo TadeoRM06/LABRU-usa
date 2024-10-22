@@ -7,13 +7,13 @@
     <div class="absolute inset-0 flex flex-col items-center justify-start px-4 mt-4" data-aos="fade-up">
       <h1 class="h3 W text-white bg-black bg-opacity-5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-10 text-center">
         REMEMBER EL SABOR DE MÉXICO WITH 
-        <span class="text-primary"><br/>LA BRU</span>
+        <span class="text-gray-100 h2"><br/>LA BRU</span>
       </h1>
     </div>
 
     <!-- Botón al final -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-      <button class="relative rounded-full w-[30vh] bg-primary-light text-white py-3 px-6 transition duration-300 ease-in-out hover:bg-primary transform scale-100 flex items-center justify-center animate-pulse">
+      <button id="" class="relative rounded-full w-[30vh] bg-primary-light text-white py-3 px-6 transition duration-300 ease-in-out hover:bg-primary transform scale-100 flex items-center justify-center animate-pulse">
         FIND US      
         <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0l-4-4m4 4l4-4" />

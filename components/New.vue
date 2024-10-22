@@ -1,6 +1,6 @@
 <template>
     <div
-      class="flex items-center justify-center h-[60vh] bg-center bg-custom-size"
+      class="flex items-center justify-center h-[60vh] mt-16 mb-20 bg-center bg-custom-size "
       style="background-image: url('/images/mancha.webp'); background-repeat: no-repeat; background-position: center;"
       data-aos="fade-up" 
       data-aos-duration="1000"

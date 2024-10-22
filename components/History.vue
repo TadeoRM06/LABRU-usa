@@ -1,11 +1,11 @@
 <template>
-    <section>
-        <div class="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+    <section id="storytelling">
+        <div  class="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
             <div class="pb-12 md:pb-20">
                 <!-- Section header -->
                 <div class="mx-auto max-w-3xl pb-12 text-center md:pb-20">
                     <h2 class="h2 text-white ">
-                        El recuerdo of Mexico with Every <span class="text-primary ">LA BRU </span>chela.
+                        El recuerdo of Mexico with Every <span class="text-primary  mt-28">LA BRU </span>chela.
                     </h2>
                 </div>
 
