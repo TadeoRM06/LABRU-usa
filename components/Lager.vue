@@ -10,9 +10,9 @@
                         <path id="b" d="M0 0h2324v658H0z" />
                         <radialGradient id="c" cx="50%" cy="0%" r="106.751%" fx="50%" fy="0%"
                             gradientTransform="matrix(0 1 -.28313 0 .5 -.5)">
-                            <stop offset="0%" stop-color="#C084FC" />
-                            <stop offset="22.35%" stop-color="#A855F7" stop-opacity=".64" />
-                            <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+                            <stop offset="0%" stop-color="#BCC5DB" />
+                            <stop offset="22.35%" stop-color="#5B7BAA" stop-opacity=".64" />
+                            <stop offset="100%" stop-color="#5B7BAA" stop-opacity="0" />
                         </radialGradient>
                         <linearGradient id="d" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
                             <stop offset="0%" stop-color="#FFF" />
@@ -32,10 +32,12 @@
                 </svg>
                 </div>
             </div>
-            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 z-10">
+            <div class="relative max-w-6xl mx-auto px-4 sm:px-6 z-10 ">
                 <div class="">
                     <div
-                        class="max-w-xl  mx-auto md:max-w-none flex flex-col md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-8 space-y-reverse md:space-y-0">
+                        class="max-w-xl  mx-auto md:max-w-none flex flex-col md:flex-row 
+                        md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-20 space-y-reverse
+                        md:space-y-0">
                         <!-- Image -->
                         <div class="md:w-5/12 lg:w-1/2 flex justify-center items-center" data-aos="fade-up"
                             data-aos-delay="100">

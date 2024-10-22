@@ -10,9 +10,9 @@
                     <path id="b" d="M0 0h2324v658H0z" />
                     <radialGradient id="c" cx="50%" cy="0%" r="106.751%" fx="50%" fy="0%"
                         gradientTransform="matrix(0 1 -.28313 0 .5 -.5)">
-                        <stop offset="0%" stop-color="#C084FC" />
-                        <stop offset="22.35%" stop-color="#A855F7" stop-opacity=".64" />
-                        <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+                        <stop offset="0%" stop-color="#CDCEE6" />
+                        <stop offset="31%" stop-color="#444AB3" stop-opacity=".84" />
+                        <stop offset="100%" stop-color="#161731" stop-opacity="0" />
                     </radialGradient>
                     <linearGradient id="d" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
                         <stop offset="0%" stop-color="#FFF" />
@@ -56,32 +56,32 @@
                         <div class="mt-8 w-72 md:max-w-xs max-md:mx-auto space-y-2  ">
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '1' ? 'border-slate-700 opacity-50' : 'border-purple-700 shadow shadow-purple-500/25'"
+                                :class="tab !== '1' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
                                 @click.prevent="tab = '1'">
                                 <span>Color: Deep Gold</span>
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '2' ? 'border-slate-700 opacity-50' : 'border-purple-700 shadow shadow-purple-500/25'"
+                                :class="tab !== '2' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
                                 @click.prevent="tab = '2'">
                                 <span>SRM: 6</span>
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '3' ? 'border-slate-700 opacity-50' : 'border-purple-700 shadow shadow-purple-500/25'"
+                                :class="tab !== '3' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
                                 @click.prevent="tab = '3'">
                                 <span>IBU: 11</span>
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-purple-700 shadow shadow-purple-500/25'"
+                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
                                 @click.prevent="tab = '4'">
                                 <span>Caloriaas: 5.4%</span>
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-purple-700 shadow shadow-purple-500/25'"
-                                @click.prevent="tab = '4'">
+                                :class="tab !== '5' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
+                                @click.prevent="tab = '5'">
                                 <span>Alc: 5.4%</span>
                             </button>
                         </div>

@@ -10,9 +10,9 @@
                     <path id="b" d="M0 0h2324v658H0z" />
                     <radialGradient id="c" cx="50%" cy="0%" r="106.751%" fx="50%" fy="0%"
                         gradientTransform="matrix(0 1 -.28313 0 .5 -.5)">
-                        <stop offset="0%" stop-color="#C084FC" />
-                        <stop offset="22.35%" stop-color="#A855F7" stop-opacity=".64" />
-                        <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+                        <stop offset="0%" stop-color="#BCC5DB" />
+                        <stop offset="31%" stop-color="#2F8CDF" stop-opacity=".64" />
+                        <stop offset="100%" stop-color="#2F8CDF" stop-opacity="0" />
                     </radialGradient>
                     <linearGradient id="d" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
                         <stop offset="0%" stop-color="#FFF" />
@@ -35,9 +35,9 @@
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 z-10">
             <div class="">
                 <div
-                    class="max-w-xl mx-auto md:max-w-none flex flex-col md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-8 space-y-reverse md:space-y-0">
+                    class=" max-w-xl mx-auto md:max-w-none flex flex-col md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-8 space-y-reverse md:space-y-0">
                     <!-- Content -->
-                    <div class="md:w-7/12 lg:w-1/2 order-1 md:order-none max-md:text-center flex flex-col justify-center"
+                    <div class=" md:mt-32 md:w-7/12 lg:w-1/2 order-1 md:order-none max-md:text-center flex flex-col justify-center"
                         data-aos="fade-down">
                         <h3
                             class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
@@ -47,7 +47,7 @@
                             bold, hop-forward brew that commands atención. This is a brew that delivers el perfect punch
                             de bitterness y un crisp, refreshing finish. Es más que an IPA -it’s the spirit of a Mexican
                             craft, brewed for those who crave intensity y originalidad in every sip.
-                             
+                            <br>
                             Un tributo to Vizcaino, a bio-natural park en Baja California Sur, Mexico, declarado a World
                             Heritage site by UNESCO in 1993.
                             </p>
@@ -86,10 +86,10 @@
                     </div>
 
                     <!-- Image -->
-                    <div class="md:w-5/12 lg:w-1/2 flex justify-center items-center " data-aos="fade-up"
+                    <div class=" md:w-5/12 lg:w-1/2 flex justify-center items-center " data-aos="fade-up"
                         data-aos-delay="100">
-                        <div class="relative h-full left-1 md:left-0">
-                            <img src="/images/beers/ipa/chela.png" class="h-[75vh] max-h-[700px] object-contain" />
+                        <div class="md:mt-32 relative h-full left-1 md:left-0 ">
+                             <img src="/images/beers/ipa/chela.png" class="h-[75vh] max-h-[700px] object-contain relative z-0" />
                         </div>
                     </div>
 
@@ -99,7 +99,7 @@
             <div class="flex flex-col md:flex-row justify-center items-center
                  space-x-0 md:space-x-8 pb-12 md:pb-20">
                 <div class="w-full md:w-2/3  text-center md:text-left mr-4 py-6">
-                    <p class="text-lg text-slate-400">
+                    <p class="text-sm text-slate-400">
                         Crafted with passion and precision, nuestra IPA is a bold, hop-forward brew that commands
                         atención. This is a brew that delivers el perfect punch de bitterness y un crisp, refreshing
                         finish. Es más que an IPA -it’s the spirit of a Mexican craft, brewed for those who crave
@@ -134,3 +134,4 @@ export default {
     },
 }
 </script>
+
