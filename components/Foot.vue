@@ -95,7 +95,7 @@ const socialLinks = [
             <!-- Sección de botellas -->
             <div class="mt-8 flex justify-center">
                 <div
-                    class="relative w-[60vh] md:w-[110vh] h-auto mx-auto overflow-hidden flex justify-center items-center">
+                    class="relative w-[60vh] md:w-[100vh] h-auto mx-auto overflow-hidden flex justify-center items-center">
                     <!-- Imagen de la botella -->
                     <NuxtImg src="/images/footer/1.png" class="w-full h-auto object-contain" alt="Yellow bottle" />
 
