@@ -73,8 +73,8 @@ const socialLinks = [
                         </li>
                         <li class="flex items-center justify-center gap-2">
                             <span class="font-light">Location:</span>
-                            <NuxtLink :to="`https://maps.app.goo.gl/VAxjREiMcHqdU5m48`"
-                                target="_blank" class="hover:text-primary">Morelia, México</NuxtLink>
+                            <NuxtLink :to="`https://maps.app.goo.gl/VAxjREiMcHqdU5m48`" target="_blank"
+                                class="hover:text-primary">Morelia, México</NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -92,28 +92,26 @@ const socialLinks = [
                     </div>
                 </div>
             </div>
-
             <!-- Sección de botellas -->
-            <div class="mt-16 md:mt-28 flex justify-center">
-                <div class="relative w-48 md:w-60 h-24">
-                    <div class="absolute left-0 top-1/2 -translate-y-1/2 transform -translate-x-8">
-                        <NuxtImg src="/images/footer/Yellowbottle.png"
-                            class="w-full h-auto transform hover:scale-105 transition-transform duration-300"
-                            alt="Yellow bottle" />
-                    </div>
-                    <div class="absolute right-0 top-1/2 -translate-y-1/2 transform translate-x-[4rem]">
-                        <NuxtImg src="/images/footer/Blackbotte.png"
-                            class="w-full h-auto transform hover:scale-105 transition-transform duration-300"
-                            alt="Black bottle" />
+            <div class="mt-8 flex justify-center">
+                <div
+                    class="relative w-[60vh] md:w-[110vh] h-auto mx-auto overflow-hidden flex justify-center items-center">
+                    <!-- Imagen de la botella -->
+                    <NuxtImg src="/images/footer/1.png" class="w-full h-auto object-contain" alt="Yellow bottle" />
+
+                    <!-- Degradado en la parte inferior -->
+                    <div
+                        class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/100 via-black/40 to-transparent pointer-events-none">
                     </div>
                 </div>
             </div>
 
+
             <!-- Nueva sección de políticas y créditos -->
-            <div class="mt-16 border-t border-gray-800 pt-8">
+            <div class="mt-2 border-t border-gray-800 ">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <!-- Enlaces de políticas -->
-                    <div class="flex space-x-6 text-sm text-gray-400">
+                    <div class="flex space-x-6 text-sm text-gray-400 mt-4">
                         <NuxtLink to="/privacy-policy" class="hover:text-orange-500 transition-colors duration-300">
                             Privacy Policy
                         </NuxtLink>
