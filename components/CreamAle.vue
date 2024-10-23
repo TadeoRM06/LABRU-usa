@@ -45,7 +45,7 @@
                     </div>
                     <!-- Content -->
                     <div class="md:w-7/12 lg:w-1/2 order-1 md:order-none 
-                     max-md:text-center flex flex-col justify-center border border-red-500"
+                     max-md:text-center flex flex-col justify-center md:pt-28 "
                         data-aos="fade-down">
                         <h3
                             class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
@@ -68,6 +68,18 @@
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
+                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
+                                @click.prevent="tab = '4'">
+                                <span>Calories: 120</span>
+                            </button>
+                            <button
+                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
+                                :class="tab !== '5' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
+                                @click.prevent="tab = '5'">
+                                <span>Alc: 5.4%</span>
+                            </button>
+                            <button
+                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
                                 :class="tab !== '2' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
                                 @click.prevent="tab = '2'">
                                 <span>SRM: 6</span>
@@ -78,18 +90,7 @@
                                 @click.prevent="tab = '3'">
                                 <span>IBU: 11</span>
                             </button>
-                            <button
-                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
-                                @click.prevent="tab = '4'">
-                                <span>Calorie: 5.4%</span>
-                            </button>
-                            <button
-                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '5' ? 'border-slate-700 opacity-50' : 'border-blue-700 shadow shadow-blue-500/25'"
-                                @click.prevent="tab = '5'">
-                                <span>Alc: 5.4%</span>
-                            </button>
+                            
                         </div>
                     </div>
                 </div>

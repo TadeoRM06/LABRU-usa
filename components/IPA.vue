@@ -44,10 +44,14 @@
                             class=" h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
                             IPA
                         </h3>
-                        <p class="text-lg text-slate-400 mb-8 mx-7 md:mx-0  text-left ">Crafted with passion and precision, our IPA is a bold, hop-forward brew that commands attention. This is a brew that delivers a perfect punch of bitterness and a crisp, refreshing finish. It’s more than IPA -it’s the spirit of a Mexican craft, brewed for those who crave intensity and originality in every sip.
- 
- In tribute to Vizcaino, a bio-natural park in Baja California Sur, Mexico, declared a World Heritage site by UNESCO in 1993.
- 
+                        <p class="text-lg text-slate-400 mb-8 mx-7 md:mx-0  text-left ">
+                            Crafted with passion and precision, our IPA is a bold, 
+                            hop-forward brew that commands attention. This is a brew that 
+                            delivers a perfect punch of bitterness and a crisp, refreshing finish. 
+                            It’s more than IPA -it’s the spirit of a Mexican craft, brewed for 
+                            those who crave intensity and originality in every sip.
+                        In tribute to Vizcaino, a bio-natural park in Baja California Sur, 
+                        Mexico, declared a World Heritage site by UNESCO in 1993.
                             </p>
                         <div class="mt-8 w-72 md:max-w-xs max-md:mx-auto space-y-2  ">
                             <button
@@ -55,6 +59,18 @@
                                 :class="tab !== '1' ? 'border-slate-700 opacity-50' : 'border-[#2F8CDF] shadow shadow-[#2F8CDF]'"
                                 @click.prevent="tab = '1'">
                                 <span>Color: Deep Gold</span>
+                            </button>
+                            <button
+                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
+                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-[#2F8CDF] shadow shadow-[#2F8CDF]'"
+                                @click.prevent="tab = '4'">
+                                <span>Calories: 168</span>
+                            </button>
+                            <button
+                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
+                                :class="tab !== '5' ? 'border-slate-700 opacity-50' : 'border-[#2F8CDF] shadow shadow-[#2F8CDF]'"
+                                @click.prevent="tab = '5'">
+                                <span>Alc: 5.8%</span>
                             </button>
                             <button
                                 class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
@@ -68,30 +84,19 @@
                                 @click.prevent="tab = '3'">
                                 <span>IBU: 52</span>
                             </button>
-                            <button
-                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '4' ? 'border-slate-700 opacity-50' : 'border-[#2F8CDF] shadow shadow-[#2F8CDF]'"
-                                @click.prevent="tab = '4'">
-                                <span>Calorie: </span>
-                            </button>
-                            <button
-                                class="flex items-center text-sm font-medium text-slate-50 rounded border bg-slate-800/25 w-full px-3 py-2 transition duration-150 ease-in-out hover:opacity-100"
-                                :class="tab !== '5' ? 'border-slate-700 opacity-50' : 'border-[#2F8CDF] shadow shadow-[#2F8CDF]'"
-                                @click.prevent="tab = '5'">
-                                <span>Alc: 5.8%</span>
-                            </button>
+                            
                         </div>
                     </div>
 
                     <!-- Image -->
                     <!-- Imagen -->
                     <div class="md:mt-0 w-full md:w-5/12 lg:w-1/2 flex justify-center items-center mx-0" data-aos="fade-up" data-aos-delay="100">
-    <div class="md:mt-0 relative h-full left-0 md:left-0 mx-0">
-        <img src="/images/beers/ipa/vizcaBG3.png" 
-            class="w-full h-auto md:h-[100vh] max-h-[1000px] object-contain relative z-0 mx-0
-            mt-40 md:mt-0" />
-    </div>
-</div>
+                        <div class="md:mt-0 relative h-full left-0 md:left-0 mx-0 ">
+                            <img src="/images/beers/ipa/vizcaBG3.png" 
+                                class="w-full h-auto md:h-[100vh] max-h-[1000px] object-contain relative z-0 mx-0
+                                mt-40 md:mt-0" />
+                        </div>
+                    </div>
 
                 </div>
             </div>

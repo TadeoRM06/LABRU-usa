@@ -1,316 +1,281 @@
 <template>
-  <div class="map-container mt-24">
-    <div id="postal-code-form">
-      <input v-model="postalCode" type="text" placeholder="Ingresa tu código postal">
-      <button @click="findNearestLocations">Buscar</button>
+  <div class="dark-mode-map">
+    <h1 class="title">Dark Mode Map</h1>
+    
+    <div class="map-and-locations ">
+      <div id="map" ref="mapRef"></div>
+      <div class="nearest-locations ">
+        <h2 class="locations-title ">Nearest Locations</h2>
+        <div class="search-container flex flex-col ">
+      <input 
+        v-model="postalCode" 
+        type="text" 
+        placeholder="Enter US ZIP code"
+        class="postal-code-input "
+      >
+      <div class="flex align-middle justify-center mt-5 ">
+
+        <button id="" class="relative  rounded-full w-[30vh] bg-primary-light text-white py-3 px-6 transition duration-300 ease-in-out
+        hover:bg-primary transform scale-100 flex items-center justify-center animate-pulse" @click="findNearestLocations">
+        
+        FIND US      
+        <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0l-4-4m4 4l4-4" />
+        </svg>
+      </button>
     </div>
-    <div id="nearest-locations">
-      <h4 v-if="nearestLocations.length">Lugares más cercanos:</h4>
-      <div v-for="(location, index) in nearestLocations" :key="index">
-        <p><strong>{{ index + 1 }}. {{ location.name }}</strong></p>
-        <p>Distancia: {{ (location.distance / 1000).toFixed(2) }} km</p>
-        <p><strong>Teléfono:</strong> {{ location.phone || 'No disponible' }}</p>
-        <p><strong>Sitio web:</strong> 
-          <a v-if="location.website" :href="location.website" target="_blank">{{ location.website }}</a>
-          <span v-else>No disponible</span>
-        </p>
-        <a :href="location.url" target="_blank" class="google-maps-button">
-          Ver en Google Maps
-        </a>
-        <hr>
+    </div>
+        <div v-for="(location, index) in nearestLocations" :key="index" class="location-card border border-[#FC6D26]">
+          <h3>{{ location.name }}</h3>
+          <p class="text-white">Distance: {{ (location.distance / 1609.34).toFixed(2) }} miles</p>
+        
+        </div>
       </div>
     </div>
-    <div id="map"></div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { Loader } from '@googlemaps/js-api-loader';
-import { MarkerClusterer } from '@googlemaps/markerclusterer';
 
 const postalCode = ref('');
 const nearestLocations = ref([]);
-let map, infoWindow, geocoder, markerClusterer;
-let userLocation = null;
-let nearestLocationMarkers = [];
-
-// Función para extraer coordenadas de URL de Google Maps
-function extractCoordinatesFromUrl(url) {
-  try {
-    // Para URLs cortas de Google Maps
-    if (url.includes('maps.app.goo.gl')) {
-      const urlMappings = {
-        'PMf5kniWSoGULjBJ6': { lat: 19.726185199015827, lng: -101.14208524235971 },
-        'AG6xVCBLh4wqf3eL8': { lat: 19.703490344222583, lng: -101.19236006312148 },
-         
-        // Agrega más mapeos según necesites
-      };
-      const id = url.split('/').pop();
-      return urlMappings[id] || null;
-    }
-    
-    // Para URLs con coordenadas directas
-    if (url.includes('maps?q=')) {
-      const coords = url.split('maps?q=')[1].split(',');
-      return {
-        lat: parseFloat(coords[0]),
-        lng: parseFloat(coords[1])
-      };
-    }
-    
-    if (url.includes('maps/@')) {
-      const coords = url.split('maps/@')[1].split(',');
-      return {
-        lat: parseFloat(coords[0]),
-        lng: parseFloat(coords[1])
-      };
-    }
-    
-    return null;
-  } catch (error) {
-    console.error('Error extracting coordinates:', error);
-    return null;
-  }
-}
+const mapRef = ref(null);
+let map, google;
 
 const locations = [
   {
-    url: "https://maps.app.goo.gl/PMf5kniWSoGULjBJ6",
-    name: "Cervecería La Bru",
-    phone: "+524439702330",
-    website: "http://www.cervezalabru.com.mx/"
+    url: "https://maps.app.goo.gl/YA68UvsLrsMHsXhh9",
+    name: "Northgate Market - South Gate",
+    adress: "11660 Firestone Blvd, Norwalk, CA 90650, Estados Unidos",
+    position: { lat: 33.913431260335535, lng: -118.08486537430285 }
   },
   {
-    url: "https://maps.app.goo.gl/AG6xVCBLh4wqf3eL8",
-    name: "Santuario La Bru",
-    phone: "+524439702330",
+    url: "https://maps.app.goo.gl/8xtYteAPsnnnXyag7",
+    name: "Northgate Market - Santa Ana",
+    adress: "+17147755555",
+    position: { lat: 33.73701201229799, lng: -117.92141702872351 }
   },
   {
-    url: "https://www.google.com/maps?q=25.6692,-100.3097",
-    name: "Hey Guapa Monterrey",
-    phone: "8181234567",
-    website: "https://heyguapa.mx/"
-  },
-  {
-    url: "https://www.google.com/maps?q=24.8049,-107.3940",
-    name: "Hey Guapa Culiacán",
-    phone: "6671234567",
-    website: "https://heyguapa.mx/"
+    url: "https://maps.app.goo.gl/7p46ddHPturRFhUY9",
+    name: "Northgate Market - Los Angeles",
+    adress: "+17147755555",
+    website: "http://www.northgatemarket.com/",
+    position: { lat: 34.04018551664899, lng: -118.21289004193324 }
   }
 ];
 
-const loader = new Loader({
-  apiKey: "AIzaSyBMSXjwItRKJDOGHYwLpwl0Y5Wmiv1y44s",
-  version: "weekly",
-  libraries: ["places", "geometry"]
-});
-
 onMounted(async () => {
-  try {
-    const google = await loader.load();
-    initMap(google);
-  } catch (error) {
-    console.error('Error loading Google Maps:', error);
-  }
-});
-
-onUnmounted(() => {
-  if (markerClusterer) {
-    markerClusterer.clearMarkers();
-  }
-});
-
-function initMap(google) {
-  map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
-    center: { lat: 23.6345, lng: -102.5528 }, // Centro de México
+  const loader = new Loader({
+    apiKey: "AIzaSyBMSXjwItRKJDOGHYwLpwl0Y5Wmiv1y44s",
+    version: "weekly",
+    libraries: ["places", "geometry"]
   });
 
-  infoWindow = new google.maps.InfoWindow();
-  geocoder = new google.maps.Geocoder();
-
-  const markers = locations.map((location, i) => {
-    const position = extractCoordinatesFromUrl(location.url);
-    if (!position) {
-      console.error(`Could not extract coordinates for location: ${location.name}`);
-      return null;
-    }
-
-    const marker = new google.maps.Marker({
-      position: position,
-      label: {
-        text: (i + 1).toString(),
-        color: "white"
+  google = await loader.load();
+  map = new google.maps.Map(mapRef.value, {
+    center: { lat: 33.80772982455205, lng: -117.83720603568841 },
+    zoom: 10,
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#131C27" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#131C27" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#131C27" }] },
+      {
+        featureType: "administrative.locality",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#B88430" }],
       },
-    });
-
-    marker.addListener("click", () => {
-      const content = `
-        <div class="info-window">
-          <h3>${location.name}</h3>
-          <p><strong>Teléfono:</strong> ${location.phone || 'No disponible'}</p>
-          <div class="social-links">
-            ${location.website ? `<a href="${location.website}" target="_blank">Sitio Web</a>` : ''}
-          </div>
-          <a href="${location.url}" target="_blank" class="google-maps-button">
-            Ver en Google Maps
-          </a>
-        </div>
-      `;
-      infoWindow.setContent(content);
-      infoWindow.open(map, marker);
-    });
-
-    return marker;
-  }).filter(marker => marker !== null);
-
-  markerClusterer = new MarkerClusterer({ map, markers });
-}
-
-function findNearestLocations() {
-  if (!geocoder) return;
-
-  geocoder.geocode({ 'address': postalCode.value + ', Mexico' }, (results, status) => {
-    if (status === 'OK') {
-      userLocation = results[0].geometry.location;
-      
-      let sortedLocations = locations.map(location => {
-        const position = extractCoordinatesFromUrl(location.url);
-        if (!position) return null;
-
-        const distance = google.maps.geometry.spherical.computeDistanceBetween(
-          userLocation,
-          new google.maps.LatLng(position)
-        );
-        return { ...location, position, distance };
-      })
-      .filter(location => location !== null)
-      .sort((a, b) => a.distance - b.distance);
-
-      nearestLocations.value = sortedLocations.slice(0, 3);
-      markNearestLocations(nearestLocations.value, userLocation);
-    } else {
-      alert('No se pudo encontrar la ubicación para el código postal proporcionado: ' + status);
-    }
+      {
+        featureType: "poi",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#0B1016" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "geometry",
+        stylers: [{ color: "#263c3f" }],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#6b9a76" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{ color: "#38414e" }],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#212a37" }],
+      },
+      {
+        featureType: "road",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#9ca5b3" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry",
+        stylers: [{ color: "#746855" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "geometry.stroke",
+        stylers: [{ color: "#1f2835" }],
+      },
+      {
+        featureType: "road.highway",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#f3d19c" }],
+      },
+      {
+        featureType: "water",
+        elementType: "geometry",
+        stylers: [{ color: "#17263c" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.fill",
+        stylers: [{ color: "#515c6d" }],
+      },
+      {
+        featureType: "water",
+        elementType: "labels.text.stroke",
+        stylers: [{ color: "#17263c" }],
+      },
+    ],
   });
-}
 
-function markNearestLocations(locations, userLocation) {
-  // Eliminar marcadores anteriores
-  nearestLocationMarkers.forEach(marker => marker.setMap(null));
-  nearestLocationMarkers = [];
-
-  // Crear marcador de ubicación del usuario
-  const userMarker = new google.maps.Marker({
-    position: userLocation,
-    map: map,
-    icon: {
-      path: google.maps.SymbolPath.CIRCLE,
-      fillColor: '#4285F4',
-      fillOpacity: 1,
-      strokeColor: '#4285F4',
-      strokeOpacity: 1,
-      strokeWeight: 1,
-      scale: 10
-    },
-    title: "Tu ubicación"
-  });
-  nearestLocationMarkers.push(userMarker);
-
-  // Crear nuevos marcadores para los lugares más cercanos
-  locations.forEach((location, index) => {
+  locations.forEach((location) => {
     const marker = new google.maps.Marker({
       position: location.position,
       map: map,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: '#FF69B4',
-        fillOpacity: 1,
-        strokeColor: '#FF69B4',
-        strokeOpacity: 1,
-        strokeWeight: 1,
-        scale: 10
-      },
-      label: {
-        text: (index + 1).toString(),
-        color: "white"
-      },
-      title: location.name
+      title: location.name,
     });
 
-    nearestLocationMarkers.push(marker);
-  });
+    const infoWindow = new google.maps.InfoWindow({
+      content: `
+        <div style="color: #0B1016;">
+          <h3>${location.name}</h3>
+          <p><strong>adress:</strong> ${location.adress}</p>
+          <p><a href="${location.website}" target="_blank" style="color: #ffffff;">Website</a></p>
+          <a href="${location.url}" target="_blank" style="background-color: #ffffff; color: #0B1016; padding: 5px 10px; text-decoration: none; display: inline-block; margin-top: 10px;">View in Google Maps</a>
+        </div>
+      `,
+    });
 
-  // Centrar el mapa para mostrar todos los marcadores
-  const bounds = new google.maps.LatLngBounds();
-  nearestLocationMarkers.forEach(marker => bounds.extend(marker.getPosition()));
-  map.fitBounds(bounds);
-}
+    marker.addListener("click", () => {
+      infoWindow.open(map, marker);
+    });
+  });
+});
+
+const findNearestLocations = () => {
+  if (!google || !postalCode.value) return;
+
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: `${postalCode.value}, USA` }, (results, status) => {
+    if (status === "OK") {
+      const userLocation = results[0].geometry.location;
+      nearestLocations.value = locations
+        .map((location) => ({
+          ...location,
+          distance: google.maps.geometry.spherical.computeDistanceBetween(
+            userLocation,
+            new google.maps.LatLng(location.position)
+          ),
+        }))
+        .sort((a, b) => a.distance - b.distance)
+        .slice(0, 3);
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });
+};
 </script>
 
 <style scoped>
-.map-container {
-  position: relative;
-  height: 100vh;
-  width: 100%;
+.dark-mode-map {
+  background-color: #16202C;
+  color: #f39c12;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  margin-bottom: 20px;
+  
+}
+
+.postal-code-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: white;
+  background-color: #16202C;
+  color: white;
+}
+
+.search-button {
+  padding: 10px 8px;
+  font-size: 1rem;
+  background-color: #f39c12;
+  color: #0B1016;
+  border: none;
+  cursor: pointer;
+}
+
+.map-and-locations {
+  display: flex;
+  gap: 20px;
 }
 
 #map {
-  height: 100%;
-  width: 100%;
+  height: 600px;
+  flex-grow: 1;
 }
 
-.info-window {
-  max-width: 300px;
+.nearest-locations {
+  width: 300px;
+  background-color: #0B1016;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.info-window h3 {
+.locations-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: whitesmoke;
+}
+
+.location-card {
+  background-color: #16202C;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.location-card h3 {
   margin-top: 0;
-}
-
-.info-window p {
-  margin-bottom: 5px;
-}
-
-.social-links a {
-  margin-right: 10px;
-}
-
-#nearest-locations {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 5;
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  font-family: 'Roboto','sans-serif';
-  max-width: 300px;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-.google-maps-button {
-  display: inline-block;
-  background-color: #4285F4;
   color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  text-decoration: none;
-  margin-top: 10px;
 }
 
-#postal-code-form {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 5;
-  background-color: #fff;
-  padding: 10px;
-  border: 1px solid #999;
-  border-radius: 5px;
-  font-family: 'Roboto','sans-serif';
+.website-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.website-link:hover {
+  text-decoration: underline;
 }
 </style>
