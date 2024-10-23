@@ -44,13 +44,14 @@
                         </div>
                     </div>
                     <!-- Content -->
-                    <div class="md:w-7/12 lg:w-1/2 order-1 md:order-none max-md:text-center flex flex-col justify-center"
+                    <div class="md:w-7/12 lg:w-1/2 order-1 md:order-none 
+                     max-md:text-center flex flex-col justify-center border border-red-500"
                         data-aos="fade-down">
                         <h3
                             class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
                             CREAM ALE
                         </h3>
-                        <p class="text-lg text-slate-400 mb-8 md:pr-4 mx-10 text-left">
+                        <p class="text-lg text-slate-400 mb-8 md:pr-4 mx-7 md:mx-0 text-left">
                             Our cream ale brewed with Authentic Maíz Azule AKA Blue 
                             Corn from meseta Purepecha brings smooth and refreshing 
                             textures with the rich, earthy sweetness of corn, delivering

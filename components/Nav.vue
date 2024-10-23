@@ -21,16 +21,16 @@
       <div class="hidden md:flex md:items-center">
         <ul class="flex space-x-8">
           <li>
-            <a href="#about" class="text-white hover:text-primary">Who We Are</a>
-          </li>
-          <li>
-            <a href="#beers" class="text-white hover:text-primary">Lager</a>
+            <a href="#about" class="text-white hover:text-primary">About Us</a>
           </li>
           <li>
             <a href="#story" class="text-white hover:text-primary">Cream Ale</a>
           </li>
           <li>
             <a href="#find" class="text-white hover:text-primary">IPA</a>
+          </li>
+          <li>
+            <a href="#beers" class="text-white hover:text-primary">Lager</a>
           </li>
           <li>
             <a href="#find" class="text-white hover:text-primary">Storytelling</a>

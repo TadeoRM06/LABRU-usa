@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.8",
+    "@googlemaps/markerclusterer": "^2.5.3",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "nuxt": "^3.13.0",
     "nuxt-aos": "^1.2.5",

@@ -38,13 +38,13 @@
                 <div
                     class=" max-w-xl mx-auto md:max-w-none flex flex-col md:flex-row md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-8 space-y-reverse md:space-y-0">
                     <!-- Content -->
-                    <div class=" md:mt-32 md:w-7/12 lg:w-1/2 order-1 md:order-none max-md:text-center flex flex-col justify-center"
+                    <div class=" md:mt-32  md:ml-10 md:w-7/12 lg:w-1/2 order-1 md:order-none max-md:text-center flex flex-col justify-center"
                         data-aos="fade-down">
                         <h3
-                            class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
+                            class=" h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
                             IPA
                         </h3>
-                        <p class="text-lg text-slate-400 mb-8 mx-10  text-left ">Crafted with passion and precision, our IPA is a bold, hop-forward brew that commands attention. This is a brew that delivers a perfect punch of bitterness and a crisp, refreshing finish. It’s more than IPA -it’s the spirit of a Mexican craft, brewed for those who crave intensity and originality in every sip.
+                        <p class="text-lg text-slate-400 mb-8 mx-7 md:mx-0  text-left ">Crafted with passion and precision, our IPA is a bold, hop-forward brew that commands attention. This is a brew that delivers a perfect punch of bitterness and a crisp, refreshing finish. It’s more than IPA -it’s the spirit of a Mexican craft, brewed for those who crave intensity and originality in every sip.
  
  In tribute to Vizcaino, a bio-natural park in Baja California Sur, Mexico, declared a World Heritage site by UNESCO in 1993.
  
