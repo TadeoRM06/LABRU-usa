@@ -5,7 +5,7 @@
     
     <!-- Texto centrado con efecto vidrio, movido hacia arriba -->
     <div class="absolute inset-0 flex flex-col items-center justify-start px-4 mt-4" data-aos="fade-up">
-      <h1 class="h3 W text-white bg-black bg-opacity-5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-10 text-center">
+      <h1 class="h3  text-white bg-black bg-opacity-5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-10 text-center">
         REMEMBER EL SABOR DE MÉXICO WITH 
         <span class="text-gray-100 h2"><br/>LA BRU</span>
       </h1>
