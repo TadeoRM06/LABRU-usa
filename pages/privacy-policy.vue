@@ -1,4 +1,11 @@
 <template>
+      <Head>
+      <title>Privacy Policy | LA BRU</title>
+      <meta name="description" content="Privacy Policy for LA BRU. Learn how we collect, use, and protect your personal information." />
+      <meta name="robots" content="noindex, nofollow" />
+      <link rel="canonical" href="https://www.labru.com/privacy-policy" />
+    </Head>
+
     <div class="min-h-screen max-w-screen-xl mx-auto bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 mt-16">
       <div class="max-w-4xl mx-auto">
         <h1 class="h2 font-bold mb-8 text-center text-primary">

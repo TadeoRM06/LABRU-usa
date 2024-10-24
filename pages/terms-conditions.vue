@@ -1,4 +1,11 @@
 <template>
+      <Head>
+      <title>Terms and Conditions | LA BRU</title>
+      <meta name="description" content="Terms and Conditions for LA BRU. Read our policies regarding the use of our website and services." />
+      <meta name="robots" content="noindex, nofollow" />
+      <link rel="canonical" href="https://www.labru.com/terms-and-conditions" />
+    </Head>
+
     <div class="min-h-screen max-w-screen-xl mx-auto bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 mt-16">
       <div class="max-w-4xl mx-auto">
         <h1 class="h2 font-bold mb-8 text-center text-primary">

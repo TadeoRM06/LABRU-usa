@@ -1,0 +1,9 @@
+# START nuxt-simple-robots (indexable)
+User-agent: *
+Allow: /
+Disallow: /privacy-policy
+Disallow: /terms-conditions
+Disallow: /api/
+
+Sitemap: https://www.drinklabru.com/sitemap.xml
+# END nuxt-simple-robots
