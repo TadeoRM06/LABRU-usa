@@ -6,12 +6,16 @@
     </Head>
 
     <div class="relative max-w-[1920px] mx-auto">
+        <!-- Popup de verificación de edad -->
         <AgeVerificationPopup v-if="shouldShowVerification" />
+
+        <!-- Si la verificación de edad ha sido completada -->
         <Nav v-if="!shouldShowVerification" />
-        <slot v-if="!shouldShowVerification" />
+        <NuxtPage v-if="!shouldShowVerification" />
         <Foot v-if="!shouldShowVerification" />
     </div>
 </template>
+
 
 <script>
 export default {
