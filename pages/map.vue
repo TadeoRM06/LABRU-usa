@@ -42,6 +42,8 @@
 import { ref, onMounted } from 'vue';
 import { Loader } from '@googlemaps/js-api-loader';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import myIcon from '@/public/icons/pinRegular.svg';
+
 
 const postalCode = ref('');
 const nearestLocations = ref([]);
