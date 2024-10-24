@@ -33,10 +33,10 @@
             <a href="#lager" class="text-white hover:text-primary">Lager</a>
           </li>
           <li>
-            <NuxtLink href="/#storytelling" class="text-white hover:text-primary">Storytelling</NuxtLink>
+            <NuxtLink href="/#ubication" class="text-white hover:text-primary">Ubication</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="/#ubication" class="text-white hover:text-primary">Ubication</NuxtLink>
+            <NuxtLink href="/#storytelling" class="text-white hover:text-primary">Storytelling</NuxtLink>
           </li>
         </ul>
 
@@ -52,23 +52,23 @@
       <!-- Mobile Menu -->
       <div :class="isMenuOpen ? 'block w-full slide-in' : 'hidden'" class="md:hidden" id="navbar-default">
         <ul class="flex flex-col mt-4">
-          <li>
-            <NuxtLink href="#about" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Who We Are</NuxtLink>
+          <li>/
+            <NuxtLink href="/#about" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Who We Are</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="#creamale" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Cream Ale</NuxtLink>
+            <NuxtLink href="/#creamale" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Cream Ale</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="#ipa" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">IPA</NuxtLink>
+            <NuxtLink href="/#ipa" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">IPA</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="#lager" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Lager</NuxtLink>
+            <NuxtLink href="/#lager" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Lager</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="#storytelling" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Storytelling</NuxtLink>
+            <NuxtLink href="/#ubication" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Ubication</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="#ubication" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Ubication</NuxtLink>
+            <NuxtLink href="/#storytelling" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Storytelling</NuxtLink>
           </li>
         </ul>
         <div class="flex items-center justify-center mt-4 space-x-4">

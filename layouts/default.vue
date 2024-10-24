@@ -1,8 +1,15 @@
 <template>
+    <Html lang="en" />
+    <Head>
+        <Link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <Link rel="preload" fetchpriority="high" as="image" type="image/webp" href="/images/LOGO LETRAS-.png" />
+    </Head>
+
     <div class="relative max-w-[1920px] mx-auto">
-        <AgeVerificationPopup v-if="!ageVerified" />        <Nav v-if="ageVerified" />
-        <slot v-if="ageVerified" />
-        <Foot />
+        <AgeVerificationPopup v-if="shouldShowVerification" />
+        <Nav v-if="!shouldShowVerification" />
+        <slot v-if="!shouldShowVerification" />
+        <Foot v-if="!shouldShowVerification" />
     </div>
 </template>
 
@@ -10,37 +17,50 @@
 export default {
     data() {
         return {
-            ageVerified: false,
+            shouldShowVerification: true,
             showLoader: true,
         };
     },
+    watch: {
+        // Watch for route changes
+        '$route'(to) {
+            this.handleRouteChange(to.path);
+        }
+    },
     mounted() {
-        const currentRoute = this.$route.path;
-
-        // Si la ruta no necesita verificar la edad
-        if (currentRoute === '/privacidad_y_politica' || currentRoute === '/terminos_y_condiciones') {
-            this.ageVerified = true;
-            this.showLoader = false;
-            return;
-        }
-
-        // Verificación de cookies ya existentes
-        const expirationTime = localStorage.getItem('es_mayor_de_edad');
-
-        // Si las cookies son válidas 
-        if (expirationTime && Date.now() <= Number(expirationTime)) {
-            this.ageVerified = true;
-        }
-
-        // Ocultar el loader una vez que la verificación esté completa
+        this.handleRouteChange(this.$route.path);
+        
         window.addEventListener('load', () => {
             this.showLoader = false;
         });
     },
     methods: {
+        handleRouteChange(path) {
+            // List of routes that don't require age verification
+            const publicRoutes = ['/privacy-policy', '/terms-conditions'];
+            
+            if (publicRoutes.includes(path)) {
+                this.shouldShowVerification = false;
+                return;
+            }
+
+            // Check for age verification
+            const expirationTime = localStorage.getItem('es_mayor_de_edad');
+            
+            if (expirationTime && Date.now() <= Number(expirationTime)) {
+                this.shouldShowVerification = false;
+            } else {
+                // If not verified and not on a public route, show verification
+                this.shouldShowVerification = true;
+                
+                // Remove the age verification if it's expired
+                if (expirationTime) {
+                    localStorage.removeItem('es_mayor_de_edad');
+                }
+            }
+        },
         handleAge() {
-            this.ageVerified = true;
-            // Aquí puedes establecer la cookie si lo deseas
+            this.shouldShowVerification = false;
             const expirationTime = Date.now() + 31536000000; // 1 año
             localStorage.setItem('es_mayor_de_edad', expirationTime);
         },
