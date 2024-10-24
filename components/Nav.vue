@@ -42,17 +42,18 @@
 
         <!-- Social Icons for Desktop -->
         <div class="flex items-center ml-8 space-x-4">
-          <NuxtLink v-for="(social, index) in socialLinks" :key="index" :href="social.url"
+          <a target="_blank" v-for="(social, index) in socialLinks" :key="index" :href="social.url"
             class="hover:opacity-80 transition-opacity duration-300">
-            <NuxtImg :src="social.icon" :width="social.width" :height="social.height" alt="Social media icon" />
-          </NuxtLink>
+            <NuxtImg :src="social.icon" :width="social.width" :height="social.height" 
+            alt="Social media icon" />
+        </a>
         </div>
       </div>
 
       <!-- Mobile Menu -->
       <div :class="isMenuOpen ? 'block w-full slide-in' : 'hidden'" class="md:hidden" id="navbar-default">
         <ul class="flex flex-col mt-4">
-          <li>/
+          <li>
             <NuxtLink href="/#about" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Who We Are</NuxtLink>
           </li>
           <li>
@@ -65,7 +66,7 @@
             <NuxtLink href="/#lager" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Lager</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="/#ubication" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Ubication</NuxtLink>
+            <NuxtLink href="/#ubication" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Location</NuxtLink>
           </li>
           <li>
             <NuxtLink href="/#storytelling" @click="toggleMenu" class="block py-2 px-4 text-center text-white hover:bg-primary-light">Storytelling</NuxtLink>
@@ -87,8 +88,8 @@ import { ref } from 'vue';
 
 const isMenuOpen = ref(false);
 const socialLinks = [
-  { icon: '/icons/instagram.svg', url: '#', width: 40, height: 40 },
-  { icon: '/icons/facebook.svg', url: '#', width: 30, height: 30 }
+  { icon: '/icons/instagram.svg', url: 'https://www.instagram.com/drinklabru/', width: 40, height: 40 },
+  { icon: '/icons/facebook.svg', url: 'https://www.facebook.com/profile.php?id=61564872046976', width: 30, height: 30 }
 ];
 
 const toggleMenu = () => {
