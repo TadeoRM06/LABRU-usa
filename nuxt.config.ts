@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -10,12 +9,11 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap'
   ],
   runtimeConfig: {
-    // Aquí se definen las variables de entorno
     public: {
-      apiKey: process.env.MAPS_API_KEY
+      apiKey: process.env.MAPS_API_KEY,
     },
     private: {
-      resendApiKey: process.env.RESEND_API_KEY, // Clave privada
+      resendApiKey: process.env.RESEND_API_KEY,
     }
   },
   app: {
@@ -23,5 +21,38 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
     }
+  },
+  nitro: {
+    compressPublicAssets: true,
+    prerender: {
+      routes: [
+        '/sitemap.xml',
+        '/',
+      ]
+    }
+  },
+  site: {
+    url: 'https://www.drinklabru.com'
+  },
+  sitemap: {
+    urls: ['/'],
+    exclude: [
+      '/privacy-policy',
+      '/terms-conditions'
+    ],
+  },
+  robots: {
+    rules: [
+      {
+        UserAgent: '*',
+        Disallow: '/privacy-policy',
+        Allow: '/'
+      },
+      {
+        UserAgent: '*',
+        Disallow: '/terms-conditions'
+      }
+    ],
+    sitemap: 'https://www.drinklabru.com/sitemap.xml'
   }
 });
