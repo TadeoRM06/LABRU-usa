@@ -45,6 +45,8 @@ import { ref, onMounted } from 'vue';
 import { Loader } from '@googlemaps/js-api-loader';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import myIcon from '@/public/icons/pinRegular.svg';
+const config = useRuntimeConfig();
+
 
 const postalCode = ref('');
 const nearestLocations = ref([]);
@@ -86,7 +88,7 @@ const nearestSvgMarker = {
 
 onMounted(async () => {
     const loader = new Loader({
-        apiKey: "AIzaSyBMSXjwItRKJDOGHYwLpwl0Y5Wmiv1y44s",
+        apiKey: config.public.apiKey,
         version: "weekly",
         libraries: ["places", "geometry"]
     });

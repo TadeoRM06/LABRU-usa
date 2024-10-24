@@ -10,10 +10,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Aquí se definen las variables de entorno
     public: {
-      // Otras variables públicas si es necesario
+      apiKey: process.env.MAPS_API_KEY
     },
     private: {
-      resendApiKey: process.env.RESEND_API_KEY // Clave privada
+      resendApiKey: process.env.RESEND_API_KEY, // Clave privada
     }
   }
 });
