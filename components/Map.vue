@@ -2,11 +2,11 @@
     <div class="dark-mode-map">
         <!-- Section header -->
         <div class="mx-auto max-w-5xl px-4 text-center md:pb-20">
-            <h2 class="h2 text-white ">
+            <h2 class="h2 text-white " data-aos="fade-up" data-aos-delay="100" >
                 Find <span class="text-primary ">LA BRU </span>in a Northgate near you and enjoy the magic of Mexico.
             </h2>
         </div>
-        <div class="map-and-locations flex md:flex-row flex-col-reverse">
+        <div class="map-and-locations flex md:flex-row flex-col-reverse" data-aos="fade-up" data-aos-delay="100" >
             <div id="map" ref="mapRef"></div>
             <div class="nearest-locations flex items-center flex-col">
                 <h2 class="locations-title">Nearest Locations</h2>
