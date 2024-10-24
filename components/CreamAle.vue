@@ -42,9 +42,18 @@
                     <div class="md:mt-10 md:w-5/12 lg:w-1/2 flex justify-center items-center" data-aos="fade-up"
                         data-aos-delay="100">
                         <div class="relative">
-                            <img src="/images/beers/creamale/creamale.png"
+
+
+                                <NuxtImg
+                                preload src="/images/beers/creamale/creamale.webp"
                                 alt="A refreshing LA BRU Cream Ale served in a chilled glass, showcasing its smooth texture and creamy head, with subtle notes of blue corn and a backdrop that reflects the vibrant essence of Mexican culture."
-                                class="h-[75vh] max-h-[700px] object-contain" />
+                                height="500"
+                                width="500"
+                                quality="90" 
+                                data-aos="zoom-in" data-aos-delay="400"
+                                class="h-[75vh] max-h-[700px] object-contain" 
+                                />
+
                         </div>
                     </div>
                     <!-- Content -->
@@ -112,8 +121,16 @@
                     </p>
                 </div>
                 <div class="flex justify-center items-start w-full md:w-1/3 mt-4 md:mt-0">
-                    <!-- Cambié w-1/3 a w-full para pantallas pequeñas -->
-                    <img src="/images/beers/creamale/image.png" alt="Beer" class="h-60 object-contain" />
+
+                    <NuxtImg
+                                preload src="/images/beers/creamale/maizAzul.webp"
+                                alt="Isologo Cream Ale"
+                                height="250"
+                                width="200"
+                                quality="90" 
+                                data-aos="zoom-in" data-aos-delay="400"
+                                class="h-60 object-contain"
+                                />
                 </div>
             </div>
 

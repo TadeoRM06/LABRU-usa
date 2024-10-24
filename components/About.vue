@@ -10,7 +10,7 @@
       <div class="flex justify-center">
 
            <NuxtImg
-              preload src="/images/LogoLABRU.png"
+              preload src="/images/LogoLABRU.webp"
               alt="logoLABRU"
               class="my-8 sm:my-12"
               height="300"

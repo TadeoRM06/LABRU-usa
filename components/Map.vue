@@ -1,7 +1,7 @@
 <template>
     <div class="dark-mode-map">
         <!-- Section header -->
-        <div class="mx-auto max-w-5xl px-4 text-center md:pb-20">
+        <div class="mx-auto max-w-5xl px-4 text-center md:pb-20 leading-10">
             <h2 class="h2 text-white " data-aos="fade-up" data-aos-delay="100" >
                 Find <span class="text-primary ">LA BRU </span>in a Northgate near you and enjoy the magic of Mexico.
             </h2>

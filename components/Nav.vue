@@ -21,7 +21,7 @@
       <div class="hidden md:flex md:items-center">
         <ul class="flex space-x-8 md:space-x-6">
           <li>
-            <NuxtLink href="/#about" class="text-white hover:text-primary">Who We Are</NuxtLink>
+            <NuxtLink href="/#about" class="text-white hover:text-primary">About Us</NuxtLink>
           </li>
           <li>
             <NuxtLink href="/#creamale" class="text-white hover:text-primary">Cream Ale</NuxtLink>
@@ -33,7 +33,7 @@
             <a href="#lager" class="text-white hover:text-primary">Lager</a>
           </li>
           <li>
-            <NuxtLink href="/#ubication" class="text-white hover:text-primary">Ubication</NuxtLink>
+            <NuxtLink href="/#ubication" class="text-white hover:text-primary">Location</NuxtLink>
           </li>
           <li>
             <NuxtLink href="/#storytelling" class="text-white hover:text-primary">Storytelling</NuxtLink>

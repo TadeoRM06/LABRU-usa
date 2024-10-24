@@ -41,9 +41,16 @@
                     <div class="md:mt-0 w-full md:w-5/12 lg:w-1/2 flex justify-center items-center mx-0"
                         data-aos="fade-up" data-aos-delay="100">
                         <div class="md:mt-0 relative h-full left-0 md:left-0 mx-0">
-                            <img src="/images/beers/lager/lagerBg2.png"
-                                alt="A refreshing LA BRU Lager beer displayed in a clear glass, highlighting its golden color and crisp bubbles against a lively backdrop, representing the rich heritage of Mexican brewing traditions."
-                                class="w-full h-auto md:h-[100vh] max-h-[1000px] object-contain relative z-0 mx-0 mt-40 md:mt-0" />
+                           
+                                <NuxtImg
+                                preload src="/images/beers/lager/lagerBg2.webp"
+                                alt="A vibrant image of LA BRU's IPA beer, showcasing its refreshing golden color and frothy head against a scenic background, symbolizing the unique flavors inspired by Vizcaíno, Baja California Sur."
+                                height="500"
+                                width="500"
+                                quality="90" 
+                                data-aos="zoom-in" data-aos-delay="400"
+                                class="w-full h-auto md:h-[100vh] max-h-[1000px] object-contain relative z-0 mx-0 mt-40 md:mt-0" 
+                                />
 
                         </div>
                     </div>
@@ -109,7 +116,15 @@
                     </p>
                 </div>
                 <div class="flex justify-center items-start w-full md:w-1/3 mt-4 md:mt-0">
-                    <img src="/images/beers/lager/image.png" alt="Beer" class="h-56 object-contain" />
+                    <NuxtImg
+                                preload src="images/beers/lager/image.webp"
+                                alt="Isologo Lager"
+                                height="450"
+                                width="650"
+                                quality="90" 
+                                data-aos="zoom-in" data-aos-delay="400"
+                                class="h-56 object-contain"
+                                />
                 </div>
             </div>
         </div>
