@@ -86,7 +86,6 @@
                         </div>
                     </div>
 
-                    <!-- Image -->
                     <!-- Imagen -->
                     <div class="md:mt-0 w-full md:w-5/12 lg:w-1/2 flex justify-center items-center mx-0" data-aos="fade-up" data-aos-delay="100">
                         <div class="md:mt-0 relative h-full left-0 md:left-0 mx-0 ">
