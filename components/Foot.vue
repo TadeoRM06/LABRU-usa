@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const socialLinks = [
-    { icon: '/icons/instagram.svg', url: '#', width: 40, height: 40 },
-    { icon: '/icons/facebook.svg', url: '#', width: 30, height: 30 }
+    { icon: '/icons/instagram.svg', url: 'https://www.instagram.com/drinklabru/', width: 40, height: 40 },
+    { icon: '/icons/facebook.svg', url: 'https://www.facebook.com/profile.php?id=61564872046976', width: 30, height: 30 }
 ];
 </script>
 
@@ -41,7 +41,7 @@ const socialLinks = [
                     <ul class="space-y-3">
                         <li>
                             <NuxtLink to="/#about" class="hover:text-orange-500 transition-colors duration-300">
-                                Who We Are
+                                About Us
                             </NuxtLink>
                         </li>
                         <li>
@@ -51,7 +51,7 @@ const socialLinks = [
                         </li>
                         <li>
                             <NuxtLink to="/#lager" class="hover:text-orange-500 transition-colors duration-300">
-                                Ubication
+                                Location
                             </NuxtLink>
                         </li>
                     </ul>
@@ -84,7 +84,7 @@ const socialLinks = [
                     <h3 class="text-2xl font-semibold mb-6 text-w">Social</h3>
 
                     <div class="flex justify-center space-x-6">
-                        <a v-for="(social, index) in socialLinks" :key="index" :href="social.url"
+                        <a v-for="(social, index) in socialLinks" :key="index" :href="social.url" target="_blank"
                             class="hover:opacity-80 transition-opacity duration-300">
                             <NuxtImg :src="social.icon" :width="social.width" :height="social.height"
                                 alt="Social media icon" />
