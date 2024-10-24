@@ -27,13 +27,10 @@
             <NuxtLink href="/#creamale" class="text-white hover:text-primary">Cream Ale</NuxtLink>
           </li>
           <li>
-            <NuxtLink href="/#lager" class="text-white hover:text-primary">Lager</NuxtLink>
+            <NuxtLink href="/#ipa" class="text-white hover:text-primary">IPA</NuxtLink>
           </li>
           <li>
-            <a href="#beers" class="text-white hover:text-primary">Lager</a>
-          </li>
-          <li>
-            <a href="#beers" class="text-white hover:text-primary">Lager</a>
+            <a href="#lager" class="text-white hover:text-primary">Lager</a>
           </li>
           <li>
             <NuxtLink href="/#storytelling" class="text-white hover:text-primary">Storytelling</NuxtLink>

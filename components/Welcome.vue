@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-[90vh] bg-cover bg-center mt-24" style="background-image: url('/images/welcome/image.png');">
+  <div class="relative h-[90vh] max-h-[1000px] bg-cover bg-center mt-24" style="background-image: url('/images/welcome/image.png');">
     <!-- Capa de difuminado negro que empieza en 3/4 de la imagen -->
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/95" style="background: linear-gradient(to bottom, transparent 75%, rgba(0, 0, 0, 0.95) 100%);"></div>
     

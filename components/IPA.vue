@@ -1,10 +1,8 @@
 <template>
 <section id="ipa" class="relative mx-auto">
-    <div class="absolute inset-0 -z-10 -mx-6 sm:-mx-12 
-    lg:-mx-16 xl:-mx-28 rounded-t-[3rem] pointer-events-none overflow-hidden">
-        <div class="absolute left-1/2 -translate-x-1/2 top-0 -z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1404"
-                height="658">
+    <div class="absolute inset-0 -z-10 mx-0 sm:mx-0 lg:mx-0 xl:mx-0 rounded-t-[3rem] pointer-events-none overflow-x-hidden">
+        <div class="absolute left-1/2 -translate-x-1/2 top-0 -z-10 w-full h-full">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-full h-full">
                 
                 <defs>
                     <path id="a" d="M0 0h2324v658H0z" />

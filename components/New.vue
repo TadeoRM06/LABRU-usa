@@ -34,7 +34,7 @@
 </style>
 <template>
   <!-- El formulario ya tiene @submit.prevent="handleSubmit" para manejar el envío -->
-  <div class="flex items-center justify-center h-[60vh] mt-16 mb-20 bg-center bg-custom-size"
+  <div class="flex items-center justify-center h-[100vh] max-h-[700px]  bg-center"
     style="background-image: url('/images/mancha.webp'); background-repeat: no-repeat; background-position: center;"
     data-aos="fade-up" data-aos-duration="1000">
     <div class="w-full max-w-md p-8 bg-opacity-80 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">

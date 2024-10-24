@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full">
+  <section class="w-full max-h-[1080px]">
     <div id="about" class="w-full mx-auto flex flex-col items-center  bg-cover bg-center py-8 px-4 sm:px-6 lg:px-8">
       <h2 class="h2 font-bold text-white text-center mb-4 mt-12" data-aos="fade-up">ABOUT US</h2>
       <p class="text-white text-center text-sm sm:text-base lg:text-lg max-w-2xl" data-aos="fade-up" data-aos-delay="200">
