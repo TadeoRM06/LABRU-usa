@@ -4,6 +4,7 @@
     <CreamAle />
     <IPA />
     <Lager />
+    <Map/>
     <History />
     <New/>
 </template>

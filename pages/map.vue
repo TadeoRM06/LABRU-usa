@@ -1,7 +1,8 @@
+
 <template>
   <div class="dark-mode-map">
     <div class="map-and-locations flex md:flex-row flex-col-reverse mt-24">
-      <div id="map" ref="mapRef" class="map"></div>
+      <div id="map" ref="mapRef"></div>
       <div class="nearest-locations flex items-center flex-col">
         <h2 class="locations-title">Nearest Locations</h2>
         <div class="search-container flex flex-col">
@@ -47,11 +48,7 @@ import myIcon from '@/public/icons/pinRegular.svg';
 const postalCode = ref('');
 const nearestLocations = ref([]);
 const mapRef = ref(null);
-let map, google, markerClusterer, geocoder;
-
-// Definir las variables de los marcadores aquí, pero inicializarlas después de cargar la API de Google Maps
-let closeSvgMarker;
-let regularSvgMarker;
+let map, google, markerClusterer;
 
 const locations = [
   {
@@ -75,6 +72,17 @@ const locations = [
   }
 ];
 
+// Custom SVG markers
+const regularSvgMarker = {
+  
+};
+
+const nearestSvgMarker = {
+ 
+};
+
+// You can add more custom SVG markers here
+
 onMounted(async () => {
   const loader = new Loader({
     apiKey: "AIzaSyBMSXjwItRKJDOGHYwLpwl0Y5Wmiv1y44s",
@@ -82,11 +90,7 @@ onMounted(async () => {
     libraries: ["places", "geometry"]
   });
 
-
-  // Espera a que la API de Google Maps esté completamente cargada
   google = await loader.load();
-
-  // Inicializa el mapa
   map = new google.maps.Map(mapRef.value, {
     center: { lat: 33.80772982455205, lng: -117.83720603568841 },
     zoom: 10,
@@ -162,36 +166,12 @@ onMounted(async () => {
     ],
   });
 
-
-
-
-  // Inicializa el Geocoder para buscar el código postal
-  geocoder = new google.maps.Geocoder();
-
-  // Inicializa los marcadores ahora que google.maps está disponible
-  closeSvgMarker = {
-    url: '/icons/botellaP2.png',
-    size: new google.maps.Size(20, 32),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(0, 32),
-  };
-
-  regularSvgMarker = {
-    path: "M10.453 14.016l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM12 2.016q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
-    fillColor: "#FC6D26",
-    fillOpacity: 1,
-    strokeWeight: 0,
-    rotation: 0,
-    scale: 2,
-  };
-
-  // Crea los marcadores
   const markers = locations.map((location, index) => {
     const marker = new google.maps.Marker({
       position: location.position,
       map: map,
       title: location.name,
-      icon: index === 0 ? closeSvgMarker : regularSvgMarker,
+      icon: index === 0 ? nearestSvgMarker : regularSvgMarker,
     });
 
     const infoWindow = new google.maps.InfoWindow({
@@ -200,8 +180,9 @@ onMounted(async () => {
           <h3><strong>place:</strong>${location.name}</h3>
           <p><strong>address:</strong> ${location.address}</p>
           <p><a href="${location.website}" target="_blank" style="color: #ffffff;">Website</a></p>
-          <a href="${location.url}" target="_blank" style="background-color: #ffffff; color: #0B1016; padding: 5px 10px; text-decoration: none; display: inline-block;">View in Google Maps</a>
-        </div>`,
+          <a href="${location.url}" target="_blank" style="background-color: #ffffff; color: #0B1016; padding: 5px 10px; text-decoration: none; display: inline-block; margin-top: 10px;">View in Google Maps</a>
+        </div>
+      `,
     });
 
     marker.addListener("click", () => {
@@ -211,56 +192,130 @@ onMounted(async () => {
     return marker;
   });
 
+  // Initialize MarkerClusterer
   markerClusterer = new MarkerClusterer({ map, markers });
 });
 
 const findNearestLocations = () => {
-  if (!postalCode.value) return;
+  if (!google || !postalCode.value) return;
 
-  geocoder.geocode({ address: postalCode.value }, (results, status) => {
-    if (status === "OK" && results[0]) {
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: `${postalCode.value}, USA` }, (results, status) => {
+    if (status === "OK") {
       const userLocation = results[0].geometry.location;
-
       nearestLocations.value = locations
-        .map(location => {
-          const locationLatLng = new google.maps.LatLng(location.position.lat, location.position.lng);
-          const distance = google.maps.geometry.spherical.computeDistanceBetween(userLocation, locationLatLng);
-          return { ...location, distance };
-        })
-        .sort((a, b) => a.distance - b.distance);
+        .map((location) => ({
+          ...location,
+          distance: google.maps.geometry.spherical.computeDistanceBetween(
+            userLocation,
+            new google.maps.LatLng(location.position)
+          ),
+        }))
+        .sort((a, b) => a.distance - b.distance)
+        .slice(0, 3);
+
+      // Update markers on the map
+      markerClusterer.clearMarkers();
+      const newMarkers = nearestLocations.value.map((location, index) => {
+        return new google.maps.Marker({
+          position: location.position,
+          map: map,
+          title: location.name,
+          icon: index === 0 ? nearestSvgMarker : regularSvgMarker,
+        });
+      });
+      markerClusterer.addMarkers(newMarkers);
+
+      // Center the map on the nearest location
+      if (nearestLocations.value.length > 0) {
+        map.setCenter(nearestLocations.value[0].position);
+        map.setZoom(12);
+      }
     } else {
-      alert("We couldn't find that postal code.");
+      alert("Geocode was not successful for the following reason: " + status);
     }
   });
 };
 </script>
 
 <style scoped>
-.map {
-  width: 100%;
-  height: 400px;
+.dark-mode-map {
+background-color: #16202C;
+color: #f39c12;
+min-height: 100vh;
+padding: 20px;
+font-family: Arial, sans-serif;
 }
 
-.locations-title {
-  font-size: 24px;
-  color: #FC6D26;
+.title {
+font-size: 2rem;
+margin-bottom: 20px;
+}
+
+.search-container {
+display: flex;
+margin-bottom: 20px;
 }
 
 .postal-code-input {
-  padding: 10px;
-  margin-bottom: 10px;
+flex-grow: 1;
+padding: 10px;
+font-size: 1rem;
+border: 1px solid white;
+background-color: #16202C;
+color: white;
+}
+
+.search-button {
+padding: 10px 8px;
+font-size: 1rem;
+background-color: #f39c12;
+color: #0B1016;
+border: none;
+cursor: pointer;
+}
+
+.map-and-locations {
+display: flex;
+gap: 20px;
+}
+
+#map {
+height: 600px;
+flex-grow: 1;
+}
+
+.nearest-locations {
+background-color: #0B1016;
+padding: 20px;
+border-radius: 8px;
+}
+
+.locations-title {
+font-size: 1.5rem;
+margin-bottom: 15px;
+color: whitesmoke;
 }
 
 .location-card {
-  background-color: #16202C;
-  border: 2px solid;
-  border-radius: 10px;
-  padding: 15px;
-  margin-top: 15px;
-  text-align: center;
+background-color: #16202C;
+padding: 15px;
+margin-bottom: 15px;
+border-radius: 8px;
+border: 2px solid;
 }
 
-button:hover {
-  background-color: #FF8500;
+.location-card h3 {
+margin-top: 0;
+color: white;
+}
+
+.website-link {
+color: #ffffff;
+text-decoration: none;
+}
+
+.website-link:hover {
+text-decoration: underline;
 }
 </style>
