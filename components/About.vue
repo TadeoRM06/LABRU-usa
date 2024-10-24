@@ -8,9 +8,18 @@
 
       <!-- Imagen centrada -->
       <div class="flex justify-center">
-        <img src="/images/image.png" alt="Descripción de la imagen" 
-             class="w-4/5 sm:w-3/5 md:w-1/2 lg:w-1/3 xl:w-2/6 h-auto my-8 sm:my-12" 
-             data-aos="zoom-in" data-aos-delay="400"/>
+
+           <NuxtImg
+              preload src="/images/LogoLABRU.png"
+              alt="logoLABRU"
+              class="my-8 sm:my-12"
+              height="300"
+              width="300"
+              quality="90" 
+              data-aos="zoom-in" data-aos-delay="400"
+            />
+
+
       </div>
 
       <!-- Contenedor para los 3 divs -->
