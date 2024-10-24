@@ -59,7 +59,7 @@
                     <div class="md:w-7/12 lg:w-1/2 order-1 md:order-none max-md:text-center flex flex-col justify-center md:ml-10 md:pt-20"
                         data-aos="fade-down">
                         <h3
-                            class="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
+                            class="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
                             LAGER
                         </h3>
                         <p class="text-lg text-slate-400 mb-8 mx-7 md:mx-0 text-left">
